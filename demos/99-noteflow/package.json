@@ -1,0 +1,17 @@
+{
+  "name": "noteflow",
+  "version": "1.0.0",
+  "description": "NoteFlow - A full-featured note-taking app (Electron learning project)",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "npm run build && electron .",
+    "build": "tsc -p tsconfig.main.json && tsc -p tsconfig.renderer.json && npm run copy-assets",
+    "copy-assets": "cp src/renderer/index.html dist/renderer/ && cp -r src/renderer/styles dist/renderer/",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^42.2.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  }
+}
