@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+  <title>Markdown Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <button id="btn-new" title="New">📄 New</button>
+        <button id="btn-save" title="Save">💾 Save</button>
+      </div>
+      <div class="toolbar-right">
+        <button id="btn-theme" title="Toggle Theme">🌙</button>
+        <span id="file-name" class="file-name">Untitled</span>
+      </div>
+    </div>
+    <div class="editor-container">
+      <div class="panel editor-panel">
+        <div class="panel-header">Editor</div>
+        <textarea id="editor" placeholder="Write your Markdown here..." spellcheck="false"># Hello Markdown!
+
+This is a **bold** text and *italic* text.
+
+## Features
+
+- Real-time preview
+- File open/save
+- Theme toggle
+- Keyboard shortcuts
+
+> This is a blockquote
+
+`inline code` example
+
+### Code
+
+Write code with syntax highlighting support.</textarea>
+      </div>
+      <div class="panel preview-panel">
+        <div class="panel-header">Preview</div>
+        <div id="preview" class="preview-content"></div>
+      </div>
+    </div>
+    <div class="statusbar">
+      <span id="char-count">0 chars</span>
+      <span id="word-count">0 words</span>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

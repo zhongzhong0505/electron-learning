@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>IPC Communication Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>IPC Communication Demo</h1>
+
+    <div class="grid">
+      <!-- Counter: invoke/handle -->
+      <div class="card">
+        <h2>Counter (invoke/handle)</h2>
+        <div class="counter-display" id="counter-value">0</div>
+        <div class="button-group">
+          <button id="btn-dec">−</button>
+          <button id="btn-reset">Reset</button>
+          <button id="btn-inc">+</button>
+        </div>
+      </div>
+
+      <!-- Clock: main → renderer push -->
+      <div class="card">
+        <h2>Live Clock (main → renderer)</h2>
+        <div class="clock-display" id="clock">--:--:--</div>
+        <p class="hint">Main process pushes time every second</p>
+      </div>
+
+      <!-- Error handling -->
+      <div class="card">
+        <h2>Error Handling</h2>
+        <div class="input-row">
+          <input id="num-a" type="number" value="10" />
+          <span>÷</span>
+          <input id="num-b" type="number" value="0" />
+          <button id="btn-divide">Calculate</button>
+        </div>
+        <p id="divide-result" class="result"></p>
+      </div>
+
+      <!-- Async operation -->
+      <div class="card">
+        <h2>Async Operation</h2>
+        <button id="btn-async">Run 2s Async Task</button>
+        <p id="async-result" class="result"></p>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

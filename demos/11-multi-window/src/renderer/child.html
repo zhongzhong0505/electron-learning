@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Child Window</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container child">
+    <h2>👶 Child Window</h2>
+    <p class="subtitle">Listening for messages from other windows...</p>
+
+    <div class="section">
+      <h3>Send Message</h3>
+      <div class="input-row">
+        <input id="child-msg" type="text" placeholder="Message from child..." />
+        <button id="child-broadcast-btn">Broadcast</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Received Messages</h3>
+      <div id="messages" class="messages"></div>
+    </div>
+  </div>
+  <script src="child-renderer.js"></script>
+</body>
+</html>

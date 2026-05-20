@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>HTTP Client</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header><h1>⚡ HTTP Client</h1></header>
+    <div class="request-bar">
+      <select id="method">
+        <option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option>
+      </select>
+      <input id="url" type="text" placeholder="https://jsonplaceholder.typicode.com/posts/1" value="https://jsonplaceholder.typicode.com/posts" />
+      <button id="send-btn">Send</button>
+    </div>
+    <div class="panels">
+      <div class="panel request-panel">
+        <h3>Request Headers</h3>
+        <textarea id="req-headers" placeholder='{"Content-Type": "application/json"}'>{"Content-Type": "application/json"}</textarea>
+        <h3>Request Body</h3>
+        <textarea id="req-body" placeholder='{"title": "Hello", "body": "World"}'></textarea>
+      </div>
+      <div class="panel response-panel">
+        <div class="response-meta" id="response-meta"></div>
+        <h3>Response</h3>
+        <pre id="response-body"><code>Send a request to see the response</code></pre>
+      </div>
+    </div>
+    <div class="history">
+      <h3>History</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

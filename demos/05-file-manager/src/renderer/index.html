@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>File Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>📁 Files</h2>
+        <button id="open-folder-btn" title="Open Folder">📂</button>
+      </div>
+      <div id="file-tree" class="file-tree">
+        <p class="placeholder">Open a folder to browse files</p>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="toolbar">
+        <button id="open-file-btn">Open File</button>
+        <button id="copy-path-btn" disabled>Copy Path</button>
+        <button id="show-finder-btn" disabled>Show in Finder</button>
+      </div>
+      <div id="file-info" class="file-info" style="display:none">
+        <div class="info-row"><span>Name:</span><span id="info-name"></span></div>
+        <div class="info-row"><span>Path:</span><span id="info-path"></span></div>
+        <div class="info-row"><span>Size:</span><span id="info-size"></span></div>
+        <div class="info-row"><span>Modified:</span><span id="info-modified"></span></div>
+      </div>
+      <div id="file-content" class="file-content">
+        <pre id="content-pre"><code>Select a file to view its content</code></pre>
+      </div>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

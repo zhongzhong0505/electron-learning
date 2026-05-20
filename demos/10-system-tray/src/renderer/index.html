@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>System Tray Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔔 System Tray Demo</h1>
+    <p class="subtitle">Close this window — the app keeps running in the system tray!</p>
+
+    <div class="card">
+      <h3>Send Notification</h3>
+      <div class="input-group">
+        <input id="notify-title" type="text" placeholder="Notification title" value="Hello!" />
+        <input id="notify-body" type="text" placeholder="Notification body" value="This is from the tray app" />
+      </div>
+      <button id="notify-btn">Send Notification</button>
+    </div>
+
+    <div class="card">
+      <h3>Tray Status</h3>
+      <div id="status" class="status-text">App is running in foreground</div>
+    </div>
+
+    <div class="card">
+      <h3>How it works</h3>
+      <ul class="feature-list">
+        <li>Closing the window <strong>hides</strong> it (doesn't quit the app)</li>
+        <li>Tray icon stays in the system notification area</li>
+        <li>Click tray icon to show the window again</li>
+        <li>Right-click tray icon for context menu</li>
+        <li>Use "Quit" from tray menu to fully exit</li>
+      </ul>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

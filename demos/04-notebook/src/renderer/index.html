@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Notebook</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>📓 Notes</h2>
+        <button id="new-note-btn" title="New Note">+</button>
+      </div>
+      <input id="search-input" type="text" placeholder="Search notes..." />
+      <ul id="note-list" class="note-list"></ul>
+    </aside>
+    <main class="editor">
+      <div id="editor-empty" class="editor-empty">
+        <p>Select a note or create a new one</p>
+      </div>
+      <div id="editor-content" class="editor-content" style="display:none">
+        <input id="note-title" type="text" placeholder="Note title..." />
+        <textarea id="note-content" placeholder="Start writing..."></textarea>
+        <div class="editor-footer">
+          <span id="note-date"></span>
+          <button id="delete-note-btn" class="danger-btn">Delete</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "01-hello-world",
+  "version": "1.0.0",
+  "description": "Electron Learning - Hello World Demo",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "npm run build && electron .",
+    "build": "tsc -p tsconfig.main.json && tsc -p tsconfig.renderer.json && npm run copy-assets",
+    "copy-assets": "cp src/renderer/*.html src/renderer/*.css dist/renderer/ 2>/dev/null; true",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  }
+}

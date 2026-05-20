@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Electron!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>👋 Hello Electron!</h1>
+    <p class="subtitle">This is your first Electron application.</p>
+
+    <div class="card">
+      <h2>Greet Demo</h2>
+      <div class="input-group">
+        <input id="name-input" type="text" placeholder="Enter your name" />
+        <button id="greet-btn">Greet</button>
+      </div>
+      <p id="greeting" class="result"></p>
+    </div>
+
+    <div class="card">
+      <h2>App Info</h2>
+      <div id="app-info" class="info-grid"></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

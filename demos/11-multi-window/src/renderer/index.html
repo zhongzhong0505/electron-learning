@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Multi-Window Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🪟 Multi-Window Communication</h1>
+
+    <div class="section">
+      <h3>Create Windows</h3>
+      <button id="create-btn">Create Child Window</button>
+      <button id="refresh-btn">Refresh List</button>
+      <div id="window-list" class="window-list"></div>
+    </div>
+
+    <div class="section">
+      <h3>Broadcast to All Windows</h3>
+      <div class="input-row">
+        <input id="broadcast-msg" type="text" placeholder="Enter message to broadcast..." />
+        <button id="broadcast-btn">Broadcast</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Received Messages</h3>
+      <div id="messages" class="messages"></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

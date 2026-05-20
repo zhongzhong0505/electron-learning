@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Custom Window</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="titlebar" id="titlebar">
+    <span class="titlebar-title">Custom Frameless Window</span>
+    <div class="titlebar-buttons" id="window-controls"></div>
+  </div>
+  <div class="content">
+    <h1>🪟 Frameless Window</h1>
+    <p class="subtitle">This window has no native title bar — fully custom UI</p>
+    <div class="info-cards">
+      <div class="card">
+        <h3>Platform</h3>
+        <span id="platform-badge" class="badge">Loading...</span>
+      </div>
+      <div class="card">
+        <h3>Window State</h3>
+        <span id="window-state" class="badge">Normal</span>
+      </div>
+      <div class="card">
+        <h3>Drag Area</h3>
+        <span class="badge">Top title bar region</span>
+      </div>
+    </div>
+    <p class="hint">The top bar is draggable. On Windows/Linux, custom buttons appear. On macOS, native traffic lights are used.</p>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
