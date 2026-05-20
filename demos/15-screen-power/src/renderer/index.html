@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Screen & Power Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🖥️ Screen & Power Monitor</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>Displays</h3>
+        <div id="displays"></div>
+      </div>
+      <div class="card">
+        <h3>Power Status</h3>
+        <div class="stat-row"><span>Idle Time:</span><span id="idle-time">0s</span></div>
+        <div class="stat-row"><span>Idle State:</span><span id="idle-state">active</span></div>
+        <div class="stat-row"><span>Sleep Blocker:</span><span id="blocker-status">Off</span></div>
+        <div class="btn-row">
+          <button id="start-blocker">Prevent Sleep</button>
+          <button id="stop-blocker">Allow Sleep</button>
+        </div>
+      </div>
+      <div class="card wide">
+        <h3>Power Events Log</h3>
+        <div id="events-log" class="events-log"></div>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

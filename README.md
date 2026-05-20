@@ -32,6 +32,15 @@
 | [附录H](./docs/16-plugin-architecture.md) | 插件化架构设计 | — |
 | [附录I](./docs/17-native-interactions.md) | 系统通知/拖放/快捷键/Deep Link/自动更新/i18n | — |
 
+### 扩展章节
+
+| 章节 | 主题 | Demo |
+|------|------|------|
+| [第九章](./docs/18-session-network.md) | Session 与网络请求拦截 | [session-network](./demos/13-session-network/) |
+| [第十章](./docs/19-protocol-storage.md) | 自定义协议与安全存储 | [protocol-storage](./demos/14-protocol-storage/) |
+| [第十一章](./docs/20-screen-power.md) | 屏幕与电源管理 | [screen-power](./demos/15-screen-power/) |
+| [第十二章](./docs/21-capturer-net.md) | 屏幕录制与网络模块 | [desktop-capturer](./demos/16-desktop-capturer/) |
+
 ### 进阶 Demo
 
 | Demo | 主题 | 核心知识点 |
@@ -48,7 +57,7 @@
 - Node.js 20+
 - npm 10+ 或 yarn 1.22+
 - TypeScript 5.5+
-- Electron 33+
+- Electron 42+
 
 ### 安装与运行
 
@@ -77,13 +86,15 @@ npm run dev
 
 ## ⚠️ 版本说明
 
-本教程基于 **Electron 33+** 编写。Electron 近年来的重要变化：
+本教程基于 **Electron v42.2.0** 编写（Chromium 134, Node.js 22）。关键特性：
 
 - Context Isolation 默认开启（安全性提升）
 - 推荐使用 contextBridge 进行 IPC 通信
-- 不再推荐 `nodeIntegration: true`
-- ESM 模块支持改进
-- 新的 Utility Process API
-- Web 标准更好的支持（WebGPU、WebHID 等）
+- `nodeIntegration: false` + `sandbox: true` 为默认安全模型
+- 完善的 ESM 模块支持
+- Utility Process API（替代 child_process 用于 CPU 密集任务）
+- Web 标准全面支持（WebGPU、WebHID、WebUSB 等）
+- Service Worker 和 Web Worker 增强
+- Native Theme API 改进
 
 官方文档：https://www.electronjs.org/docs/latest

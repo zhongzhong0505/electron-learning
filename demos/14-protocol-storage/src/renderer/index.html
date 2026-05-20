@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' app:; script-src 'self'; style-src 'self'" />
+  <title>Protocol & Secure Storage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Protocol & Secure Storage</h1>
+
+    <div class="card">
+      <h3>Encryption Status</h3>
+      <div id="encryption-status" class="status"></div>
+    </div>
+
+    <div class="card">
+      <h3>Store a Secret</h3>
+      <div class="form-row">
+        <input id="key-input" type="text" placeholder="Key (e.g. api-token)" />
+        <input id="value-input" type="password" placeholder="Secret value" />
+        <button id="save-btn">Save</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Retrieve a Secret</h3>
+      <div class="form-row">
+        <input id="get-key-input" type="text" placeholder="Key to retrieve" />
+        <button id="get-btn">Get</button>
+      </div>
+      <div id="retrieved-value" class="value-display"></div>
+    </div>
+
+    <div class="card">
+      <h3>Stored Keys</h3>
+      <button id="refresh-btn">Refresh</button>
+      <div id="keys-list" class="keys-list"></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

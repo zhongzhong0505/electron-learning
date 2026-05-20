@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'" />
+  <title>Session & Network Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>🌐 Session & Network Monitor</h1>
+    <div class="tabs">
+      <button class="tab active" data-tab="requests">Requests</button>
+      <button class="tab" data-tab="cookies">Cookies</button>
+      <button class="tab" data-tab="cache">Cache</button>
+    </div>
+
+    <div id="panel-requests" class="panel active">
+      <div class="toolbar">
+        <input id="test-url" type="text" placeholder="URL to test..." value="https://jsonplaceholder.typicode.com/posts/1" />
+        <button id="test-btn">Send Request</button>
+        <button id="clear-logs-btn">Clear</button>
+      </div>
+      <div class="request-count">Requests: <span id="req-count">0</span></div>
+      <div id="request-list" class="request-list"></div>
+    </div>
+
+    <div id="panel-cookies" class="panel">
+      <div class="toolbar">
+        <button id="refresh-cookies-btn">Refresh</button>
+      </div>
+      <div id="cookie-list" class="cookie-list"></div>
+    </div>
+
+    <div id="panel-cache" class="panel">
+      <div class="cache-info">
+        <p>Cache Size: <strong id="cache-size">Loading...</strong></p>
+        <button id="clear-cache-btn">Clear Cache</button>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

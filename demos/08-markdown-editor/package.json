@@ -11,7 +11,7 @@
     "package": "electron-builder"
   },
   "devDependencies": {
-    "electron": "^33.0.0",
+    "electron": "^42.2.0",
     "electron-builder": "^25.0.0",
     "typescript": "^5.5.0",
     "@types/node": "^20.0.0"

@@ -9,26 +9,28 @@ interface Window {
   }
 }
 
-const childMsg = document.getElementById('child-msg') as HTMLInputElement
-const childBroadcastBtn = document.getElementById('child-broadcast-btn') as HTMLButtonElement
-const messages = document.getElementById('messages') as HTMLDivElement
+;(function () {
+  const childMsg = document.getElementById('child-msg') as HTMLInputElement
+  const childBroadcastBtn = document.getElementById('child-broadcast-btn') as HTMLButtonElement
+  const messagesEl = document.getElementById('messages') as HTMLDivElement
 
-childBroadcastBtn.addEventListener('click', () => {
-  const msg = childMsg.value.trim()
-  if (msg) {
-    window.electronAPI.broadcast(msg)
-    childMsg.value = ''
+  childBroadcastBtn.addEventListener('click', () => {
+    const msg = childMsg.value.trim()
+    if (msg) {
+      window.electronAPI.broadcast(msg)
+      childMsg.value = ''
+    }
+  })
+
+  childMsg.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') childBroadcastBtn.click()
+  })
+
+  function addMessage(type: string, text: string): void {
+    const time = new Date().toLocaleTimeString()
+    messagesEl.innerHTML = `<div class="msg"><span class="time">${time}</span>[${type}] ${text}</div>` + messagesEl.innerHTML
   }
-})
 
-childMsg.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') childBroadcastBtn.click()
-})
-
-function addMessage(type: string, text: string): void {
-  const time = new Date().toLocaleTimeString()
-  messages.innerHTML = `<div class="msg"><span class="time">${time}</span>[${type}] ${text}</div>` + messages.innerHTML
-}
-
-window.electronAPI.onBroadcast((msg) => addMessage('Broadcast', msg))
-window.electronAPI.onDirectMessage((msg) => addMessage('Direct', msg))
+  window.electronAPI.onBroadcast((msg) => addMessage('Broadcast', msg))
+  window.electronAPI.onDirectMessage((msg) => addMessage('Direct', msg))
+})()

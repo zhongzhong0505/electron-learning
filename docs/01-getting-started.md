@@ -124,7 +124,7 @@ hello-world/
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^33.0.0",
+    "electron": "^42.2.0",
     "typescript": "^5.5.0",
     "@types/node": "^20.0.0"
   }
